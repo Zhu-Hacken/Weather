@@ -248,11 +248,6 @@
   padding: 20rpx 0;
   justify-content: space-around;
 }
-.daily_item
-{
-  width:30%;
-
-}
 .daily_item_box 
 {  
   box-sizing: border-box;
@@ -269,7 +264,13 @@
     padding-top: 20rpx;
 
 }
-
+.daily_item_tmp
+{
+  text-align: center;
+  width: 100%;
+  padding-top: 20rpx;
+  /* font-size: 30rpx; */
+}
 /* 生活指数 */
 .lifestyle_container
 {
