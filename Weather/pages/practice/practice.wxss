@@ -1,0 +1,16 @@
+swiper
+{
+  background-color: blue;
+}
+swiper-item
+{
+  background-color: red;
+}
+.xx
+{
+  width: 30%;
+  height: 100%;
+  float: left;
+  border: 1rpx solid black;
+  background-color: yellow;
+}

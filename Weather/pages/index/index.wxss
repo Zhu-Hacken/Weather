@@ -1,0 +1,359 @@
+/* 背景图片 */
+.bg
+{
+  position: fixed;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+}
+/* 大容器 */
+.container
+{
+  color: #fff;
+
+}
+/* 用户信息 */
+.userInfo
+{
+  width: 100%;
+  height: 140rpx;
+  display: flex;
+  margin-top: 10rpx;
+  align-items: center;
+  font-size: 36rpx;
+}
+/* 头像样式 */
+.userInfo_Avatar
+{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 20rpx;
+}
+/* 用户名样式 */
+.userInfo_Name
+{
+
+}
+
+/* 当前信息 */
+.now
+{
+  width: 100%;
+  margin-top: 20rpx;
+    font-weight: bold;
+
+}
+/* 当前位置 */
+.now_position
+{
+  display: flex;
+  font-size: 40rpx;
+  align-items: center;
+  justify-content: center;
+}
+
+.now_position image
+{
+  width: 50rpx;
+  height: 50rpx;
+}
+/* 当前时间 */
+.now_time
+{
+
+}
+/* 当前天气 */
+.now_temperature
+{
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: center;
+  font-size: 120rpx;
+}
+/* 当前气候 */
+.now_cond
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50rpx;
+}
+.now_cond image
+{
+  width: 65rpx;
+  height: 65rpx;
+}
+/* 当前天气其他信息 */
+.now_info
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10rpx;
+}
+.now_info_left
+{
+  text-align: right;
+  width: 50%;
+  border-right: 1rpx solid #fff;
+
+}
+.now_info_right
+{
+  width: 50%;
+  box-sizing: border-box;
+
+}
+.now_info_left > view,
+.now_info_right > view {
+    margin: 10rpx 20rpx;
+}  
+/* 更新时间 */
+.now_update_time
+{
+  /* display: flex;*/
+  text-align: center;
+  /* justify-content: flex-end; */
+  /* padding-right: 20rpx;*/
+  padding-top: 20rpx;
+  font-size: 23rpx; 
+  font-weight: normal;
+}
+
+/* 天气预报 */
+/* 逐三小时预报 */
+.hourly_window
+{
+  padding: 20rpx 0;
+  height: 500rpx;
+}
+.hourly_swiper_item
+{
+  display: flex;
+  justify-content: space-around;
+}
+.hourly_item
+{
+  padding-top: 10rpx;
+  margin-top: 10rpx;
+}
+/* 分功能小块的容器 */
+.hourly_container
+{
+  text-align: center;
+  /* background-color: rgba(0, 0, 0, 0.4); */
+}
+.hourly_container
+{
+  margin-top: 10rpx;
+}
+.hourly_container
+{
+  width: 100%;
+  padding: 20rpx 0;
+}
+.hourly_icon
+{
+  width: 60rpx;
+  height: 60rpx;
+}
+.hourly_title
+{
+  width: 97%;
+  padding: 0 0 20rpx 0;
+  height: 50rpx;
+    background-color: rgba(0, 0, 0, 0.4);
+  justify-content: center;
+  text-align: center;
+  line-height: 70rpx;
+  border-bottom: 1rpx solid #ccc;
+    border-radius: 13rpx;
+      margin-left: 13rpx;
+}
+.hourly_swiper_column
+{
+    background-color: rgba(0, 0, 0, 0.4);
+  width: 23%;
+    border-radius: 15px;
+        height: 440rpx;
+}
+.hourly_time
+{
+  padding-top: 30rpx;
+}
+
+/* 七天预报 */
+.daily_window
+{
+  padding: 20rpx 0;
+  height: 530rpx;
+}
+.daily_swiper_item
+{
+  display: flex;
+  justify-content: space-around;
+
+}
+
+
+/* 分功能小块的标题 */
+.daily_container
+{
+  width: 100%;
+  padding: 20rpx 0;
+  text-align: center;
+
+}
+
+.daily_icon
+{
+  width: 60rpx;
+  height: 60rpx;
+}
+.daily_title
+{
+  width: 97%;
+  padding: 0 0 20rpx 0;
+  height: 50rpx;
+    background-color: rgba(0, 0, 0, 0.4);
+  justify-content: center;
+  text-align: center;
+  line-height: 70rpx;
+  border-bottom: 1rpx solid #ccc;
+    border-radius: 13rpx;
+      margin-left: 13rpx;
+}
+.daily_column
+{
+  box-sizing: border-box;
+  margin-left: 8rpx;
+  width: 92%;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 15px;
+  height: 450rpx;
+
+}
+.daily
+{
+  width: 100%;
+  display: flex;
+  padding: 20rpx 0;
+  justify-content: space-around;
+}
+.daily_item
+{
+  width:30%;
+
+}
+.daily_item_box 
+{  
+  box-sizing: border-box;
+
+  text-align: center;
+  margin-bottom: 10rpx;
+  width: 100%;
+  height: 600rpx;
+
+}
+.daily_item{
+    text-align: center;
+    width: 100%;
+    padding-top: 20rpx;
+
+}
+
+/* 生活指数 */
+.lifestyle_container
+{
+  height: 1800rpx;
+}
+.lifestyle_title
+{
+  width: 97%;
+  padding: 0 0 20rpx 0;
+  height: 50rpx;
+  background-color: rgba(0, 0, 0, 0.4);
+  justify-content: center;
+  text-align: center;
+  line-height: 70rpx;
+  border-bottom: 1rpx solid #ccc;
+  border-radius: 13rpx;
+  margin-left: 13rpx;
+}
+.lifestyle_window
+{
+  width: 97%;
+  padding-top: 20rpx;
+  padding: 0 0 20rpx 0;
+  /* background-color: rgba(0, 0, 0, 0.4); */
+  justify-content: center;
+  text-align: center;
+  line-height: 70rpx;
+  border-bottom: 1rpx solid #ccc;
+  border-radius: 13rpx;
+  margin-left: 13rpx;
+  /* height: 1800rpx; */
+
+}
+.lifestyle_item_box
+{
+  /* background-color: rgba(0, 0, 0, 0.4); */
+  height: 200rpx;
+  padding-top: 20rpx;
+
+}
+.lifestyle_item
+{
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 200rpx;
+  border-radius:30rpx;
+
+}
+.lifestyle_item_left
+{
+  width: 20%;
+  /* background-color: rgba(199, 77, 6, 0.4); */
+  height: 180rpx;
+  float: left;
+
+}
+.lifestyle_icon
+{
+  width: 100rpx;
+  height: 100rpx;
+  padding-top: 50rpx;
+}
+.lifestyle_item_right
+{  
+  float: left;
+  width: 80%;
+  /* background-color: rgba(0, 0, 0, 0.4); */
+  height: 180rpx;
+
+}
+.lifestyle_item_title
+{
+  padding-top: 5rpx;
+  justify-content: right;
+  text-align:left;
+  height: 20%;
+  font-weight: bold;
+
+}
+.lifestyle_item_content
+{
+  width: 98%;
+  padding-top: 25rpx;
+  font-size: 26rpx;
+  height: 80%;
+  text-align:left;
+  line-height: 40rpx;
+}

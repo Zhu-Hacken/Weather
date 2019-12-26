@@ -1,0 +1,125 @@
+<!-- 背景图片 -->
+<view class = 'bg' style = 'background-image:url({{bgimage}})'></view>
+
+<!-- 大容器 -->
+<view class="container">
+    <!-- 用户信息 -->
+    <view class="userInfo">
+        <open-data class = "userInfo_Avatar" type = "userAvatarUrl"></open-data>
+        <text class="userInfo_Name" >{{greeting}}， </text>
+        <open-data type = "userNickName"></open-data>
+    </view>
+    <!-- 当前信息 -->
+    <view class="now">
+        <!-- 定位 -->
+        <view class="now_position">
+            <picker mode='region' bindchange="changeRegion">
+                <text>{{location}}</text>
+            </picker>
+          <image src = "/static/img/location.png"></image>
+        </view>
+        <!-- 当前时间 -->
+        <view class="now_time"></view>
+        <!-- 当前温度 -->
+        <view class="now_temperature">
+          <text >{{now.fl}}°</text>
+        </view>
+        <!-- 当前气候 -->
+        <view class="now_cond">
+          <image src="/static/img/{{now.cond_code}}.png"></image>
+          <text>{{now.cond_txt}}</text>
+        </view>
+        <!-- 当前其他信息 -->
+        <view class="now_info">
+          <view class="now_info_left">
+            <view>{{now.wind_dir}} {{now.wind_sc}}级</view>
+            <view>湿度 {{now.hum}}%</view>
+          </view>
+          <view class="now_info_right">
+            <view>大气压 {{now.pres}}</view>
+            <view>降水量 {{now.pcpn}}</view>
+          </view>
+        </view>
+        <!-- 当前信息最后更新时间 -->
+        <view class="now_update_time">
+          <text>更新于{{update.loc}}</text>
+        </view>
+    </view>
+
+    <!-- 天气预报 -->
+    <!-- 小时预报 -->
+    <view class="hourly_container">
+        <view class="hourly_title">逐三小时预报</view>
+        <swiper class="hourly_window" indicator-active-color="#ffffff" indicator-dots="{{true}}">
+            <block wx:for="{{hourly_page}}" wx:for-index="index" wx:for-item="trip" wx:key="{{index}}">
+            
+                <swiper-item class="hourly_swiper_item">
+                     <block wx:for="{{hourly_times}}" wx:for-index="times" wx:for-item="trip" wx:key="{{times}}">
+                    <view class="hourly_swiper_column">
+                        <!-- <view>{{index}}</view>
+                        <view>{{times}}</view> -->
+                        <view class="hourly_item">{{hourly[index*4+times].time}}</view>
+                        <view class="hourly_item">{{hourly[index*4+times].cond_txt}}</view>
+                        <view class="hourly_item">
+                            <image class='hourly_icon' src="/static/img/{{hourly[index*4+times].cond_code}}.png"></image>
+                        </view>
+                        <view class="hourly_item">{{hourly[index*4+times].tmp}}°</view>
+                        <view class="hourly_item">{{hourly[index*4+times].wind_dir}}</view>
+                        <view class="hourly_item">风速{{hourly[index*4+times].wind_sc}}级</view>
+                    </view>
+                  </block>
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+    <!-- 按天预报 -->
+    <view class="daily_container">
+        <view class="daily_title">近七天预报</view>
+        <swiper class="daily_window" indicator-active-color="#ffffff" indicator-dots="{{true}}">
+            <block wx:for="{{daily_pages}}" wx:for-index="page" wx:for-item="trip" wx:key="{{page}}">
+                <swiper-item class="daily_swiper_item">
+                    <view class="daily">
+                        <!-- 第三页只显示一个数据 -->
+                        <view wx:for="{{daily_items}}"  wx:for-index="num" class="daily_item_box" wx:key="{{num}}">
+                          <block wx:if="{{page==1&&num!=3}}">
+                              <view class="daily_column">
+                                <view class="daily_item">{{daily_forecast[page*3+num].date}}</view>
+                                <view class="daily_item">{{daily_forecast[page*3+num].cond_txt_d}}</view>
+                                <view class="daily_item">
+                                    <image src = '/static/img/{{daily_forecast[page*3+num].cond_code_d}}.png' class="daily_icon"></image>
+                                </view>
+                                <view class="daily_item">{{daily_forecast[page*3+num].tmp_min}}℃~{{daily_forecast[page*3+num].tmp_max}}℃</view>
+                                <!-- <view class="daily_item">{{daily_forecast[page*3+num].cond_txt_n}}</view>
+                                <view class="daily_item">
+                                    <image src = '/static/img/{{daily_forecast[page*3+num].cond_code_n}}.png' class="daily_icon"></image>
+                                </view> -->
+                                <view class="daily_item">{{daily_forecast[page*3+num].wind_dir}}</view>
+                                <view class="daily_item">风速{{daily_forecast[page*3+num].wind_sc}}级</view>
+                                </view>
+                          </block>
+                          <!-- 其他页面显示三个数据 -->
+                          <block wx:elif="{{page != 1}}">
+                            <view class="daily_column">
+                                <view class="daily_item">{{daily_forecast[page*3+num].date}}</view>
+                                <view class="daily_item">{{daily_forecast[page*3+num].cond_txt_d}}</view>
+                                <view class="daily_item">
+                                    <image src = '/static/img/{{daily_forecast[page*3+num].cond_code_d}}.png' class="daily_icon"></image>
+                                </view>
+                                <view class="daily_item">{{daily_forecast[page*3+num].tmp_min}}℃~{{daily_forecast[page*3+num].tmp_max}}℃</view>
+                                <!-- <view class="daily_item">{{daily_forecast[page*3+num].cond_txt_n}}</view>
+                                <view class="daily_item">
+                                    <image class="daily_item" src = '/static/img/{{daily_forecast[page*3+num].cond_code_n}}.png' class="daily_icon"></image>
+                                </view> -->
+                                <view class="daily_item">{{daily_forecast[page*3+num].wind_dir}}</view>
+                                <view class="daily_item">风速{{daily_forecast[page*3+num].wind_sc}}级</view>
+                            </view>
+                          </block>
+
+                        </view>
+                    </view>
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+ 
+</view>

@@ -1,0 +1,2 @@
+<view wx:if="{{length==0}}">100</view>
+<view wx:else>200</view>
