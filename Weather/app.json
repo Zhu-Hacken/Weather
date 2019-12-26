@@ -1,7 +1,6 @@
 {
   "pages": [
       "pages/index/index",
-    "pages/practice/practice",
     "pages/map/map"
   ],
   "window": {
@@ -24,12 +23,6 @@
       "text": "天气",
       "iconPath": "/static/tabbar/weather.png",
       "selectedIconPath": "/static/tabbar/weather-s.png"
-    },
-    {
-          "pagePath": "pages/practice/practice",
-          "text": "练习",
-          "iconPath": "/static/tabbar/weather.png",
-          "selectedIconPath": "/static/tabbar/weather-s.png"
     }
         
     ]

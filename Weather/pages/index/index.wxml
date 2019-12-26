@@ -88,7 +88,7 @@
                                 <view class="daily_item">
                                     <image src = '/static/img/{{daily_forecast[page*3+num].cond_code_d}}.png' class="daily_icon"></image>
                                 </view>
-                                <view class="daily_item">{{daily_forecast[page*3+num].tmp_min}}℃~{{daily_forecast[page*3+num].tmp_max}}℃</view>
+                                <view class="daily_item_tmp">{{daily_forecast[page*3+num].tmp_min}}°~{{daily_forecast[page*3+num].tmp_max}}°</view>
                                 <!-- <view class="daily_item">{{daily_forecast[page*3+num].cond_txt_n}}</view>
                                 <view class="daily_item">
                                     <image src = '/static/img/{{daily_forecast[page*3+num].cond_code_n}}.png' class="daily_icon"></image>
@@ -105,7 +105,7 @@
                                 <view class="daily_item">
                                     <image src = '/static/img/{{daily_forecast[page*3+num].cond_code_d}}.png' class="daily_icon"></image>
                                 </view>
-                                <view class="daily_item">{{daily_forecast[page*3+num].tmp_min}}℃~{{daily_forecast[page*3+num].tmp_max}}℃</view>
+                                <view class="daily_item_tmp">{{daily_forecast[page*3+num].tmp_min}}°~{{daily_forecast[page*3+num].tmp_max}}°</view>
                                 <!-- <view class="daily_item">{{daily_forecast[page*3+num].cond_txt_n}}</view>
                                 <view class="daily_item">
                                     <image class="daily_item" src = '/static/img/{{daily_forecast[page*3+num].cond_code_n}}.png' class="daily_icon"></image>
@@ -121,5 +121,137 @@
             </block>
         </swiper>
     </view>
- 
+    <!-- 生活指数 -->
+    <view class="lifestyle_container" >
+        <!-- 存放标题 -->
+        <view class="lifestyle_title" >
+            <text>生活指数</text>
+        </view>
+        <!-- 存放内容 -->
+        <view class="lifestyle_window" >
+            <view class="lifestyle_item_box">
+                <view class="lifestyle_item" >
+                    <view class="lifestyle_item_left">
+                      <image class="lifestyle_icon" src="/static/img/comf.png"></image>
+                    </view>
+                    <view class="lifestyle_item_right" >
+                        <view class="lifestyle_item_title" >
+                            舒适度指数：{{lifestyle[0].brf}}
+                        </view>
+                        <view class="lifestyle_item_content" >
+                            <text class="">{{lifestyle[0].txt}} </text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="lifestyle_item_box">
+                <view class="lifestyle_item" >
+                    <view class="lifestyle_item_left">
+                      <image class="lifestyle_icon" src="/static/img/drsg.png"></image>
+                    </view>
+                    <view class="lifestyle_item_right" >
+                        <view class="lifestyle_item_title" >
+                            穿衣指数：{{lifestyle[1].brf}}
+                        </view>
+                        <view class="lifestyle_item_content" >
+                            <text class="">{{lifestyle[1].txt}} </text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="lifestyle_item_box">
+                <view class="lifestyle_item" >
+                    <view class="lifestyle_item_left">
+                      <image class="lifestyle_icon" src="/static/img/flu.png"></image>
+                    </view>
+                    <view class="lifestyle_item_right" >
+                        <view class="lifestyle_item_title" >
+                            感冒指数：{{lifestyle[2].brf}}
+                        </view>
+                        <view class="lifestyle_item_content" >
+                            <text class="">{{lifestyle[2].txt}} </text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="lifestyle_item_box">
+                <view class="lifestyle_item" >
+                    <view class="lifestyle_item_left">
+                      <image class="lifestyle_icon" src="/static/img/sport.png"></image>
+                    </view>
+                    <view class="lifestyle_item_right" >
+                        <view class="lifestyle_item_title" >
+                            运动指数：{{lifestyle[3].brf}}
+                        </view>
+                        <view class="lifestyle_item_content" >
+                            <text class="">{{lifestyle[3].txt}} </text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="lifestyle_item_box">
+                <view class="lifestyle_item" >
+                    <view class="lifestyle_item_left">
+                      <image class="lifestyle_icon" src="/static/img/trav.png"></image>
+                    </view>
+                    <view class="lifestyle_item_right" >
+                        <view class="lifestyle_item_title" >
+                            旅游指数：{{lifestyle[4].brf}}
+                        </view>
+                        <view class="lifestyle_item_content" >
+                            <text class="">{{lifestyle[4].txt}} </text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="lifestyle_item_box">
+                <view class="lifestyle_item" >
+                    <view class="lifestyle_item_left">
+                      <image class="lifestyle_icon" src="/static/img/uv.png"></image>
+                    </view>
+                    <view class="lifestyle_item_right" >
+                        <view class="lifestyle_item_title" >
+                            紫外线指数：{{lifestyle[5].brf}}
+                        </view>
+                        <view class="lifestyle_item_content" >
+                            <text class="">{{lifestyle[5].txt}} </text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="lifestyle_item_box">
+                <view class="lifestyle_item" >
+                    <view class="lifestyle_item_left">
+                      <image class="lifestyle_icon" src="/static/img/cw.png"></image>
+                    </view>
+                    <view class="lifestyle_item_right" >
+                        <view class="lifestyle_item_title" >
+                            洗车指数：{{lifestyle[6].brf}}
+                        </view>
+                        <view class="lifestyle_item_content" >
+                            <text class="">{{lifestyle[6].txt}} </text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="lifestyle_item_box">
+                <view class="lifestyle_item" >
+                    <view class="lifestyle_item_left">
+                      <image class="lifestyle_icon" src="/static/img/air.png"></image>
+                    </view>
+                    <view class="lifestyle_item_right" >
+                        <view class="lifestyle_item_title" >
+                            空气污染指数：{{lifestyle[7].brf}}
+                        </view>
+                        <view class="lifestyle_item_content" >
+                            <text class="">{{lifestyle[7].txt}} </text>
+                           
+                        </view>
+                    </view>
+                </view>
+            </view>
+
+
+        </view>
+    </view>
 </view>
