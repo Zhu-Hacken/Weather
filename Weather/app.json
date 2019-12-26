@@ -1,0 +1,37 @@
+{
+  "pages": [
+      "pages/index/index",
+    "pages/practice/practice",
+    "pages/map/map"
+  ],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "天气预报",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/map/map",
+      "text": "地图",
+      "iconPath": "/static/tabbar/map.png",
+      "selectedIconPath": "/static/tabbar/map-s.png"
+    },
+    {
+      "pagePath": "pages/index/index",
+      "text": "天气",
+      "iconPath": "/static/tabbar/weather.png",
+      "selectedIconPath": "/static/tabbar/weather-s.png"
+    },
+    {
+          "pagePath": "pages/practice/practice",
+          "text": "练习",
+          "iconPath": "/static/tabbar/weather.png",
+          "selectedIconPath": "/static/tabbar/weather-s.png"
+    }
+        
+    ]
+  }
+}
